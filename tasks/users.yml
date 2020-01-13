@@ -8,7 +8,7 @@
     uid: "{{ machine_user.uid | default(omit) }}"
     groups: "{{ machine_user.groups | default([machine_user.name]) }}"
     shell: "{{ machine_user.shell | default('/bin/bash') }}"
-    
+    state: "{{ machine_user.state | default(omit) }}"
 
 - name: Manage ssh keys
   authorized_key:
